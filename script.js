@@ -3,13 +3,8 @@ var wins = 0;
 var losses = 0;
 
 
-
 confirm("Would you like to play Rock, Paper or Scissors?");
 
-
-
-
-/* Win Scenarios */
 
 function game() {
 	var options = ['R', 'P', 'S']
@@ -19,6 +14,7 @@ function game() {
 
 	alert("Computer chose " + computer);
 
+	/* If - Win Scenarios */
 	if (
 		(user === 'R' && computer === "S") ||
 		(user === 'P' && computer === "R") ||
@@ -26,9 +22,12 @@ function game() {
 		alert("You win!");
 		wins++;
 
+	/*else if - Tie*/
 	} else if (user === computer) {
 		alert("It's a tie!");
 		ties++;
+	
+	/*else - Loss*/
 
 	} else {
 		alert("You loose");
@@ -37,6 +36,8 @@ function game() {
 
 	alert("Totals: " + "\nWins: " + wins + "\nTies: " + ties + "\nLosses: " + losses)
 
+	/*Run the game again*/
+
 	var again = confirm ("Do you want to play again?");
 	if (again) {
 		game();
@@ -44,41 +45,4 @@ function game() {
 
 }
 
-
 game();
-
-
-
-
-
-/*
-
-
-var playGame = confirm("Would you like to play?");
-console.log(playGame);
-
-
-alert("It's a tie");
-
-var choice = prompt("Please type, R, P or S");
-console.log (choice);
-
-
-var options = ['R', 'P', 'S']
-
-
-console.log(random);
-
-/*
-console.log(Math.floor(Math.random()*10));
-
-console.log(Math.ceil(Math.random()*10));
-
-*/
-
-/* if - User wins -
-* else if - "It's a tie"
-* else - looses
-
-
-/* confirm ("Do you want to play?")*/
